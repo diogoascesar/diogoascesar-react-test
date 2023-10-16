@@ -7,7 +7,6 @@ import './styles.css';
 export default function SearchBar({ pets, onChange }) {
   const [searchResults, setSearchResults] = useState([]);
   const [search, setSearch] = useState("");
-  const [showToast, setShowToast] = useState(false); 
 
   useEffect(() => {
     onChange(searchResults);
@@ -21,9 +20,6 @@ export default function SearchBar({ pets, onChange }) {
       const filteredResults = pets.filter((pet) =>
         pet.name && pet.name.toLowerCase().startsWith(searchTerm)
       );
-      if (filteredResults.length === 0) {
-        setShowToast(true);
-      }
       setSearchResults(filteredResults);
     }
   };

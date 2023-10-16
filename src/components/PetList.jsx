@@ -8,7 +8,6 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { deletePet } from "../services/main/pets";
 import { Link } from "react-router-dom";
-import ShowPet from "./ShowPet";
 
 
 
@@ -48,7 +47,6 @@ export default function PetList() {
     };
 
 
-
     return (
         <>
         
@@ -64,7 +62,7 @@ export default function PetList() {
                                     <Card.Text>
                                         {pet.dateOfBirth}
                                     </Card.Text>
-                                    <Button variant="primary" style={{ marginRight: '20px' }}  as={Link} to={`/${pet.id}`}>Show more</Button>
+                                    <Button variant="primary" style={{ marginRight: '20px' }}  as={Link} to={`/pet/${pet.id}`}>Show more</Button>
                                     <Button variant="danger" onClick={() => handleDelete(pet.id)}>Delete</Button>
                                 </Card.Body>
                             </Card>

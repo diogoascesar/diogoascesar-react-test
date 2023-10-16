@@ -9,6 +9,7 @@ import{
 import PetList from './components/PetList.jsx';
 import NewPetForm from './components/NewPetForm/index.jsx';
 import ShowPetForm from './components/ShowPet/ShowPetForm.jsx';
+import EditPet from './components/editPet/index.jsx';
 
 
 const routes = [
@@ -26,9 +27,13 @@ const routes = [
         element: <NewPetForm/>
       },
       {
-        path: '/:petId',
+        path: '/pet/:petId',
         element: <ShowPetForm/>
-      }
+      },
+      {
+        path: '/edit/:petId',
+        element: <EditPet/>
+      },
     ]
   }
   ]

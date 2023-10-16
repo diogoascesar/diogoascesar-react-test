@@ -4,9 +4,11 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import { useParams } from 'react-router-dom';
 
 
-function ShowPetForm({ petId }) {
+function ShowPetForm() {
+    const {petId} = useParams();
     const [pet, setPet] = useState({});
 
     useEffect(() => {
@@ -34,8 +36,7 @@ function ShowPetForm({ petId }) {
                         <Card.Text>
                             {pet.dateOfBirth}
                         </Card.Text>
-                        <Button variant="primary" style={{ marginRight: '20px' }} as={Link} to={`/${pet.id}`}>Show more</Button>
-                        <Button variant="danger" onClick={() => handleDelete(pet.id)}>Delete</Button>
+                        <Button variant="primary" style={{ marginRight: '20px' }} as={Link} to={`/edit/${pet.id}`}>Edit</Button>
                     </Card.Body>
                 </Card>
             </Col>
