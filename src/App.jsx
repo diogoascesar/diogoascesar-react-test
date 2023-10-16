@@ -4,6 +4,7 @@ import NavbarComponent from "./components/NavbarComponent";
 import { Outlet } from "react-router-dom";
 
 function App() {
+
   useEffect(() => {
     //Permitir cancelar um pedido ao servidor
     const abortController = new AbortController();

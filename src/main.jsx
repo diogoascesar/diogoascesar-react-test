@@ -7,7 +7,8 @@ import{
   RouterProvider
 } from 'react-router-dom';
 import PetList from './components/PetList.jsx';
-import NewPetForm from './components/NewPetForm.jsx';
+import NewPetForm from './components/NewPetForm/index.jsx';
+import ShowPetForm from './components/ShowPet/ShowPetForm.jsx';
 
 
 const routes = [
@@ -24,6 +25,10 @@ const routes = [
         path: '/createPet',
         element: <NewPetForm/>
       },
+      {
+        path: '/:petId',
+        element: <ShowPetForm/>
+      }
     ]
   }
   ]

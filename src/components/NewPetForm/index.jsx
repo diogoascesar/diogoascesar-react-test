@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import { createOrUpdatePet } from "../services/main/pets";
+import { createOrUpdatePet } from "../../services/main/pets";
+import './styles.css'
 
 export default function NewPetForm() {
 
@@ -47,15 +48,16 @@ export default function NewPetForm() {
     return (
         <>
             <Container>
-                <form>
-                        <div>
+                <form className="pet-form-container">
+                        <div className="input-group-box">
                             <label>Name</label>
                             <input 
-                            type="text" 
+                            type="text"
                             placeholder="Pet's Name"
-                            value={handleNameChange}/>
+                            value={petName}
+                            onChange={handleNameChange}/>
                         </div>
-                        <div>
+                        <div className="input-group-box">
                         <label>Date of Birth</label>
                         <input
                             type="date"
@@ -63,14 +65,15 @@ export default function NewPetForm() {
                             onChange={handleDateChange}
                         />
                         </div>
-                        <div>
+                        <div className="input-group-box">
                             <label>Pet's Breed</label>
                             <input 
                             type="text"
                             placeholder="Pet's Breed"
-                            value={handleBreedChange}/>
+                            value={petBreed}
+                            onChange={handleBreedChange}/>
                         </div>
-                        <Button variant="primary" style={{width: '200px'}} onSubmit={handleSubmit}>Submit</Button>
+                        <Button variant="primary" style={{width: '200px'}} onClick={handleSubmit}>Submit</Button>
                 </form>
             </Container>
         </>
