@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect}  from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css';
@@ -6,7 +6,8 @@ import{
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom';
-
+import PetList from './components/PetList.jsx';
+import NewPetForm from './components/NewPetForm.jsx';
 
 
 const routes = [
@@ -14,16 +15,16 @@ const routes = [
     path:'/',
     element: <App/>,
     errorElement: <div>Error 404 - Not Found</div>,
-    // children:[
-    //   {
-    //     path: '/cart',
-    //     element: <Cart/>
-    //   },
-    //   {
-    //     path: '/',
-    //     element: <Store/>
-    //   }
-    // ]
+    children:[
+      {
+        path: '/',
+        element: <PetList/>
+      },
+      {
+        path: '/createPet',
+        element: <NewPetForm/>
+      },
+    ]
   }
   ]
   
@@ -33,3 +34,4 @@ const routes = [
       <RouterProvider router={router}></RouterProvider>
     </React.StrictMode>,
   )
+

@@ -1,9 +1,7 @@
 import { useEffect } from "react"
 import { createOrUpdatePet, deletePet, getAllPets, getPetById } from "./services/main/pets";
-import{
-  createBrowserRouter,
-  RouterProvider
-} from 'react-router-dom';
+import NavbarComponent from "./components/NavbarComponent";
+import { Outlet } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -55,7 +53,8 @@ function App() {
 
   return (
     <>
-      <h1>Base project</h1>
+      <NavbarComponent/>
+      <Outlet/>
     </>
   )
 }
